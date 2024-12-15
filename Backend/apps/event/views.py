@@ -1,3 +1,4 @@
+from django.shortcuts import get_object_or_404
 from apps.users.permissions import IsClient
 from rest_framework import generics
 from .models import *
@@ -33,7 +34,7 @@ class RegisterToEventView(generics.CreateAPIView):
     def perform_create(self, serializer):
         user = self.request.user
         event_id = self.request.data.get('event')
-        event = Event.objects.get(id=event_id)
+        event = get_object_or_404(Event, id=event_id)
 
         if EventRegistration.objects.filter(user=user, event=event).exists():
             raise serializers.ValidationError("Ya estás inscrito en este evento.")
