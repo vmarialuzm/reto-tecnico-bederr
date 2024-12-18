@@ -8,6 +8,7 @@ class EventSerializer(serializers.ModelSerializer):
         read_only_fields = ['created_at', 'updated_at']
 
 class EventRegistrationSerializer(serializers.ModelSerializer):
+    event = EventSerializer(read_only=True)
     class Meta:
         model = EventRegistration
         fields = '__all__'

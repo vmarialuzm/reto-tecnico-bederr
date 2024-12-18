@@ -139,8 +139,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ),
     # Paginación
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,  # Número de elementos por página
+    #'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    #'PAGE_SIZE': 10,  # Número de elementos por página
 
     # Filtros
     'DEFAULT_FILTER_BACKENDS': [
