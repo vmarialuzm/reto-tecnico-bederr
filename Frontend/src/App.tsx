@@ -13,17 +13,19 @@ const App: React.FC = () => {
   return (
     <AuthProvider>
       <Router>
-        <Header />
-        <div className="container mx-auto p-4">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/events/:id" element={<EventPage />} />
-            <Route path="/my-registrations" element={<MyRegistrations />} />
-          </Routes>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-grow container mx-auto p-4">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/events/:id" element={<EventPage />} />
+              <Route path="/my-registrations" element={<MyRegistrations />} />
+            </Routes>
+          </main>
+          <Footer />
         </div>
-        <Footer />
       </Router>
     </AuthProvider>
   );
